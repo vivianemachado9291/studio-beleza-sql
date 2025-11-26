@@ -73,4 +73,3 @@ CREATE TABLE SERVICO_PRODUTO (
   CONSTRAINT fk_sp_prod FOREIGN KEY (id_prod)
     REFERENCES PRODUTO(id_prod)
 );
-,
