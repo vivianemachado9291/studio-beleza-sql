@@ -23,21 +23,6 @@ Nesta etapa (Exp IV), foram aplicados:
 
 ---
 
-## 🗂 Estrutura do Repositório
-
-
-studio-beleza-sql/
-│
-├── README.md
-└── scripts/
-    ├── 01_create_schema.sql
-    ├── 02_insert_dados.sql
-    ├── 03_select_consultas.sql
-    └── 04_update_delete.sql
-
-
----
-
 ##  01_create_schema.sql – Criação do Schema e Tabelas
 
 Este script contém:
