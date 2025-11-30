@@ -1,42 +1,31 @@
 USE studio_beleza;
 
--- ===========================
--- UPDATES
--- ===========================
-
--- 1) Atualizar telefone de um cliente específico
+-- Atualização de telefone
 UPDATE CLIENTE
-SET telefone = '(11) 90000-0000'
+SET telefone = '(11) 90000-1111'
 WHERE id_cliente = 1;
 
--- 2) Marcar agendamento como CONCLUIDO
+-- Atualização de status do agendamento
 UPDATE AGENDAMENTO
 SET status = 'CONCLUIDO'
 WHERE id_ag = 3;
 
--- 3) Reajustar preço (+10%) no serviço Massagem Relaxante
+-- Reajuste de preço (+10%) no serviço 2
 UPDATE SERVICO
 SET preco = preco * 1.10
-WHERE descricao = 'Massagem Relaxante';
+WHERE id_serv = 2;
 
--- ===========================
--- DELETES
--- ===========================
+-- Atualização de status do pagamento
+UPDATE PAGAMENTO
+SET status = 'PAGO'
+WHERE id_pag = 3;
 
--- 1) Remover relação de produto usado em um serviço
+-- DELETE – exclusões
 DELETE FROM SERVICO_PRODUTO
-WHERE id_serv = 3
-  AND id_prod = 4;
+WHERE id_serv = 1 AND id_prod = 1;
 
--- 2) Deletar pagamentos pendentes de agendamentos cancelados
 DELETE FROM PAGAMENTO
-WHERE id_ag IN (
-  SELECT id_ag 
-  FROM AGENDAMENTO 
-  WHERE status = 'CANCELADO'
-);
+WHERE id_pag = 2;
 
--- 3) Deletar agendamentos cancelados
 DELETE FROM AGENDAMENTO
-WHERE status = 'CANCELADO';
-
+WHERE id_ag = 2;
